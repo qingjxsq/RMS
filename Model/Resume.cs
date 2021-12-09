@@ -16,7 +16,7 @@ namespace Model
         public string School { get; set; }      //学校
         public string Major { get; set; }       //专业
         public string Speciality { get; set; }  //特长
-        public string Images { get; set; }      //照片
+        public string Photoes { get; set; }      //照片
 
     }
 }
