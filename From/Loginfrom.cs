@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace From
 {
-    public partial class Form1 : Form
+    public partial class Loginfrom : Form
     {
-        public Form1()
+        public Boolean flag=false;
+        public Loginfrom()
         {
             InitializeComponent();
+        }
+
+        private void wecome_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            this.Close();
         }
     }
 }

@@ -16,7 +16,12 @@ namespace From
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Loginfrom loginfrom = new Loginfrom();
+            loginfrom.Show();
+            if (loginfrom.flag)
+            {
+                Application.Run(new Homefrom());
+            } 
         }
     }
 }
