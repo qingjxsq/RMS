@@ -27,7 +27,7 @@ namespace SQLDAL
         ///<param name="commandText">要执行的SQl语句</param>
         ///<param name="comandType">要执行是查询语句类型，如存储过程或者SQl文本命令</param>
         ///<param nmae="paramenter">Transact-语句或者存储过程的参数数组</param>
-        ///<return></return>
+        ///<retursn></returns>
         public static DataTable ExecuteDataTable(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             //DataTable dt = new DataTable();
@@ -62,7 +62,7 @@ namespace SQLDAL
         ///</summary>
         ///<param name="commanText">要执行的SQL语句</param>
         ///<param name="commanType">要执行的查询语句的类型，如果存储过程或者SQL文本命令</param>
-        ///<return>返回查询结果集</return>
+        ///<returns>返回查询结果集</returns>
         public static DataTable ExecuteDataTable(string commandText, CommandType commandType)
         {
             return ExecuteDataTable(commandText, commandType, null);
@@ -74,7 +74,7 @@ namespace SQLDAL
         ///<param name="commandText">要执行的SQL语句</param>
         ///<param name="commandType">要执行的查询语句的类型，如存储过程中或者SQL文本命令</param>
         ///<param name="paramter">Transact-SQL语句或存储过程的参数数组</param>
-        ///<return></return>
+        ///<returns></returns>
         public static SqlDataReader ExecuteReader(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -96,7 +96,7 @@ namespace SQLDAL
         ///将CommandText发送到Connection并生成一个SqlDataReader
         ///</summary>
         ///<param name="commandText">要执行查询SQL文本命令</param>
-        ///<return></return>
+        ///<returns></returns>
         public static SqlDataReader ExecuteReader(string commandText)
         {
             return ExecuteReader(commandText, CommandType.Text, null);
@@ -120,7 +120,7 @@ namespace SQLDAL
         ///<param name="commandText">要执行的SQL语句</param>
         ///<param name="commandType">要执行的查询语句的类型，如存储过程中或者SQL文本命令</param>
         ///<param name="paramter">Transact-SQL语句或存储过程的参数数组</param>
-        ///<return></return>
+        ///<returns></returns>
         public static Object ExectueScaler(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             object result = null;
@@ -149,7 +149,7 @@ namespace SQLDAL
         ///</summary>
         ///<param name="commandText">要执行的SQL语句</param>
         ///<param name="commandType">要执行的查询语句的类型，如存储过程中或者SQL文本命令</param>
-        ///<return></return>
+        ///<returns></returns>
         public static Object ExecuteScalar(string commandText, CommandType commandType)
         {
             return ExectueScaler(commandText, commandType, null);
@@ -160,7 +160,7 @@ namespace SQLDAL
         ///<param name="commandText">要执行的SQL语句</param>
         ///<param name="commandType">要执行的查询语句的类型，如存储过程中或者SQL文本命令</param>
         ///<param name="paramter">Transact-SQL语句或存储过程的参数数组</param>
-        ///<return>返回执行操作受影响的行数</return>
+        ///<returns>返回执行操作受影响的行数</returns>
         public static int ExecuteNonQuery(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             int count = 0;
@@ -189,7 +189,7 @@ namespace SQLDAL
         ///</summary>
         ///<param name="commandText">要执行的SQL语句</param>
         ///<param name="commandType">要执行的查询语句的类型，如存储过程中或者SQL文本命令</param>
-        ///<return></return>
+        ///<returns></returns>
         public static int ExecuteNonQuery(string commamdText, CommandType commandType)
         {
             return ExecuteNonQuery(commamdText, commandType, null);

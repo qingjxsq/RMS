@@ -16,7 +16,7 @@ namespace SQLDAL
         ///添加简历信息
         ///</summary>
         ///<param name="resume"></param>
-        ///<return></return>
+        ///<returns></returns>
         public int AddResume(Model.Resume resume)
         {
             //生成SQl命令
@@ -44,7 +44,7 @@ namespace SQLDAL
         ///删除简历
         ///</summary>
         ///<param name="id"></param>
-        ///<return></return>
+        ///<returns></returns>
         public int DeleteResume(string id)
         {
             string strSQL = string.Format("DELETE FROM [dbo.tb_Resume] WHERE ID=@ID");
@@ -55,7 +55,7 @@ namespace SQLDAL
         ///修改简历
         /// </summary>
         /// <param name="resumne"></param>
-        /// <return></return>
+        /// <returns></returns>
         public int UpdateResume(Model.Resume resume)
         {
             //构造SQL语句
@@ -90,7 +90,7 @@ namespace SQLDAL
         ///根据身份证号码查询人员
         /// </summary>
         /// <param name="id"></param>
-        /// <return></return>
+        /// <returns></returns>
         public Model.Resume GetResumeID(string id)
         {
             Model.Resume resume = new Model.Resume();
@@ -122,7 +122,7 @@ namespace SQLDAL
         ///根据查询条件，获取简历列表
         /// </summary>
         /// <param name="strWhere"></param>
-        /// <return></return>
+        /// <returns></returns>
         public DataTable GetRrsumeList(string strWhere)
         {
             //生成SQL命令

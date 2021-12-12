@@ -10,15 +10,16 @@ namespace Model
     {
        public string Name;
        public string Major;
-        public string[] MajorToList()//将Major转化为列表
+        public string[] Majors;
+        public void MajorToArr()//将Major转化为数组
         {
-            string[] strArr = this.Major.Split('-');
-            return strArr;
+            this.Majors = this.Major.Split('-');
 
         }
-        public void SetMajor(string[] str)
+        public void SetMajor()
         {
-            foreach(string s in str)
+            Major = "";
+            foreach(string s in Majors)
             {
                 this.Major = s + "-";
             }

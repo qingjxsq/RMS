@@ -14,7 +14,7 @@ namespace SQLDAL
         ///修改学校专业,因为专业以字符串形式存储，以修改专业字符串实现添加专业
         /// </summary>
         /// <param name="major"></param>
-        /// <return></return>
+        /// <returns></returns>
         public int UpdateMajor(Model.School school)
         {
             StringBuilder strSQL = new StringBuilder();
@@ -27,7 +27,7 @@ namespace SQLDAL
         ///添加学校
         /// </summary>
         /// <param name="school"></param>
-        /// <return></return>
+        /// <returns></returns>
         public int AddSchool(Model.School school)
         {
             //生成SQL命令
@@ -40,10 +40,11 @@ namespace SQLDAL
             return Helper.ExecuteNonQuery(strSQL.ToString(), CommandType.Text,parameters);
         }
         ///<summary>
-        ///加载学校用于添加时选择
+        ///加载学校,用于添加时选择
         /// </summary>
-        /// <return>
-        /// </return>
+        /// <returns>
+        /// List<Model.School>
+        /// </returns>
         public List<Model.School> GetSchools ()
         {
             List<Model.School> schools = new List<Model.School>();
@@ -58,6 +59,7 @@ namespace SQLDAL
                     dr.Read();
                     school.Name = dr["SchoolName"].ToString().Trim();
                     school.Major = dr["Major"].ToString().Trim();
+                    school.MajorToArr();
                     schools.Add(school);
                 }
             }
