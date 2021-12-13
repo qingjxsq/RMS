@@ -11,8 +11,7 @@ namespace SQLDAL
     /// </summary>
     public class Helper
     {
-        private static string connString =
-            ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString.ToString();
+        private static string connString = ConfigurationManager.ConnectionStrings["yqz"].ConnectionString.ToString();
         /// <summary>
         /// 设置数据库连接字符串
         /// </summary>

@@ -17,10 +17,10 @@ namespace From
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Loginfrom loginfrom = new Loginfrom();
-            loginfrom.Show();
+            loginfrom.ShowDialog();
             if (loginfrom.flag)
             {
-                Application.Run(new Homefrom());
+                Application.Run(new HomeFrom());
             } 
         }
     }

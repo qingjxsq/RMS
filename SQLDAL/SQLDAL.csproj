@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
+    <Compile Include="Major.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeDAL.cs" />
     <Compile Include="SchoolDAL.cs" />
@@ -69,10 +70,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\From\From.csproj">
-      <Project>{cf8d24a4-b37d-46aa-b71f-65abc3313247}</Project>
-      <Name>From</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{cf2176e1-a3fd-4c8e-a3ad-cc457fea8ef2}</Project>
       <Name>Model</Name>
