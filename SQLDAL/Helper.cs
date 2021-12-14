@@ -33,7 +33,7 @@ namespace SQLDAL
             DataSet ds = new DataSet();
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = conn.CreateCommand())
+                using (SqlCommand cmd = new SqlCommand(commandText,conn))
                 {
                     //设置cmd的CommandType为指定的CommandType
                     cmd.CommandType = commandType;
@@ -123,9 +123,9 @@ namespace SQLDAL
         public static Object ExectueScaler(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             object result = null;
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     cmd.CommandType = commandType;
                     //设置cmd的CommandType为指定的CommandType
@@ -163,9 +163,9 @@ namespace SQLDAL
         public static int ExecuteNonQuery(string commandText, CommandType commandType, SqlParameter[] parameters)
         {
             int count = 0;
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     cmd.CommandType = commandType;
                     //设置cmd的CommandType为指定的CommandType

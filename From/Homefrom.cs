@@ -24,7 +24,7 @@ namespace From
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            this.UpdateResume_Click(sender, e);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -61,6 +61,27 @@ namespace From
             EditFrom editFrom =new EditFrom();
             editFrom.btnDelete.Enabled = false;
             editFrom.ShowDialog();
+        }
+
+        private void QueResume_Click(object sender, EventArgs e)
+        {
+            QueryFrom queryFrom =new QueryFrom();
+            queryFrom.ShowDialog();
+        }
+
+        private void tsbAddResume_Click(object sender, EventArgs e)
+        {
+            this.AddResume_Click(sender, e);
+        }
+
+        private void tsbDeleteResume_Click(object sender, EventArgs e)
+        {
+            this.DeleteResume_Click(sender, e);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            this.DeleteResume_Click(sender, e);
         }
     }
 }

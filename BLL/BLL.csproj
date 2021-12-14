@@ -44,7 +44,6 @@
     <Compile Include="MajorBLL.cs" />
     <Compile Include="ResumeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

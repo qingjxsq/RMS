@@ -19,7 +19,6 @@ namespace From
         string oldFileName = "";
         string photoName = "";
         ResumeBLL bllResume=new ResumeBLL();
-        SchoolBLL bllschool=new SchoolBLL();
         MajorBLL bllMajor=new MajorBLL();
         bool flag=false;
         Resume resume = new Resume();
@@ -38,9 +37,9 @@ namespace From
         {
             //获取输入
             string id=this.txbSerchID.Text.Trim();
-            //查询学生信息
+            //查询简历信息
             resume=bllResume.GetResumeByID(id);
-            //显示学生信息
+            //显示简历信息
             this.txbID.Text=resume.ID;
             this.txbName.Text=resume.Name;
             if (resume.Gender == "男")
@@ -52,9 +51,9 @@ namespace From
                 this.radioButton2.Checked=true;
             }
             this.cbPolitSta.Text = resume.PoliSta;
-            this.cbSchool.SelectedValue = resume.School;
-            this.cbMajor.SelectedValue = resume.Major;
-            this.dtBirthday.Text = resume.Birthday;
+            this.cbSchool.Text = resume.School;
+            this.cbMajor.Text = resume.Major;
+            this.txtBirthDay.Text = resume.Birthday;
             photoName = resume.Photoes;
             string phoPath = Path.Combine(Application.StartupPath, "Images");
             string photo=Path.Combine(phoPath,photoName);
@@ -92,26 +91,16 @@ namespace From
 
         private void EditFrom_Load(object sender, EventArgs e)
         {
-            /*List<School> lstSchool=bllschool.GetSchools();
-            string[] SchoolName=new string[lstSchool.Count];
-            for (int i = 0; i < lstSchool.Count; i++)
-            {
-                SchoolName[i] = lstSchool[i].Name;
-            }
-            //绑定学校表
-            this.cbSchool.DataSource=SchoolName;*/
+            
             this.cbSchool.DataSource = bllMajor.GetSchool();
         }
 
         private void cbSchool_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<School> lstSchool = bllschool.GetSchools();
-            School school = new School();
-            if(cbSchool.SelectedIndex == -1)
+            
+            if(cbSchool.SelectedItem != null)
             {
-                /*school = lstSchool[cbSchool.SelectedIndex];
-                school.MajorToArr();
-                this.cbMajor.DataSource = school.Major;*/
+                
                 this.cbMajor.DataSource = bllMajor.GetMajor(this.cbSchool.Text);
             }
         }
@@ -155,7 +144,7 @@ namespace From
                 resume.Name=this.txbName.Text.Trim();
                 resume.Gender = this.rbMen.Checked ? "男" : "女";
                 resume.PoliSta = this.cbPolitSta.Text;
-                resume.Birthday=this.dtBirthday.Text;
+                resume.Birthday=this.txtBirthDay.Text;
                 resume.School=this.cbSchool.SelectedValue.ToString().Trim();
                 resume.Major = this.cbMajor.SelectedValue.ToString().Trim();
                 if (flag == true)
@@ -220,6 +209,12 @@ namespace From
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

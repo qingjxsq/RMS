@@ -16,9 +16,7 @@ namespace From
     public partial class Addfrom : Form
     {
         string oldFilename =string .Empty;
-        SchoolBLL schoolBLL = new SchoolBLL();
-        School school;
-        List<School> schools; 
+        List<string> lstSchool=new List<string>();
         MajorBLL bllMajor=new MajorBLL();
 
         /// <summary>
@@ -27,14 +25,8 @@ namespace From
 
         private void AddSchool()
         {
-            /*schools =schoolBLL.GetSchools();
-            string[] name =new string[schools.Count];
-            for(int i = 0; i < schools.Count; i++)
-            {
-                name[i] =schools[i].Name;
-            }
-            //绑定院系
-            this.cbSchool.DataSource = name;*/
+            
+            lstSchool = bllMajor.GetSchool();
             this.cbSchool.DataSource = bllMajor.GetSchool();
 
         }
@@ -118,6 +110,7 @@ namespace From
             resume.Major = major;
             resume.PoliSta = poliyi;
             resume.Photoes = photo;
+            resume.Speciality = spec;
             
             //建立建立业务逻辑层对象
             ResumeBLL resumeBLL = new ResumeBLL();
@@ -147,16 +140,14 @@ namespace From
         {
            
             
-            if (this.cbSchool.SelectedIndex ==-1)
+            if (this.cbSchool.SelectedItem !=null)
             {
-                /*school=schools[cbMajor.SelectedIndex];
-                school.MajorToArr();
-                this.cbMajor.DataSource = school.Major;*/
+                
                 this.cbMajor.DataSource = bllMajor.GetMajor(this.cbSchool.Text);
             }
             else
             {
-                MessageBox.Show("没有选择院系！", "提示");
+                MessageBox.Show("没有选择学校！", "提示");
                 return;
             }
         }
@@ -164,6 +155,12 @@ namespace From
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Addfrom_Load(object sender, EventArgs e)
+        {
+            lstSchool = bllMajor.GetSchool();
+            this.cbSchool.DataSource = bllMajor.GetSchool();
         }
     }
 }

@@ -48,11 +48,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbMajor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtBirthday = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtBirthDay = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,6 +164,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(641, 98);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -242,14 +243,6 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "出生日期：";
             // 
-            // dtBirthday
-            // 
-            this.dtBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtBirthday.Location = new System.Drawing.Point(125, 275);
-            this.dtBirthday.Name = "dtBirthday";
-            this.dtBirthday.Size = new System.Drawing.Size(150, 21);
-            this.dtBirthday.TabIndex = 20;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(188, 363);
@@ -278,20 +271,28 @@
             this.btnExit.TabIndex = 23;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtBirthDay
+            // 
+            this.txtBirthDay.Location = new System.Drawing.Point(135, 278);
+            this.txtBirthDay.Name = "txtBirthDay";
+            this.txtBirthDay.Size = new System.Drawing.Size(140, 21);
+            this.txtBirthDay.TabIndex = 24;
             // 
             // EditFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBirthDay);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.dtBirthday);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbMajor);
             this.Controls.Add(this.label7);
@@ -343,10 +344,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbMajor;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtBirthday;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox txtBirthDay;
     }
 }

@@ -39,7 +39,7 @@ namespace SQLDAL
         {
             //生成SQL命令
             List<string> Major=new List<string>();
-            string sql = "select " + SchoolName + "from [tb_Major]";
+            string sql = "select " + SchoolName + " from [tb_Major]";
             using (SqlDataReader dr = Helper.ExecuteReader(sql))
             {
                 while (dr.Read())

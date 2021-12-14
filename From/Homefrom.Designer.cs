@@ -98,8 +98,9 @@
             // QueResume
             // 
             this.QueResume.Name = "QueResume";
-            this.QueResume.Size = new System.Drawing.Size(124, 22);
+            this.QueResume.Size = new System.Drawing.Size(180, 22);
             this.QueResume.Text = "查询简历";
+            this.QueResume.Click += new System.EventHandler(this.QueResume_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -121,7 +122,6 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbAddResume
             // 
@@ -130,7 +130,8 @@
             this.tsbAddResume.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAddResume.Name = "tsbAddResume";
             this.tsbAddResume.Size = new System.Drawing.Size(23, 22);
-            this.tsbAddResume.Text = "toolStripButton1";
+            this.tsbAddResume.Text = "添加简历";
+            this.tsbAddResume.Click += new System.EventHandler(this.tsbAddResume_Click);
             // 
             // tsbDeleteResume
             // 
@@ -139,7 +140,8 @@
             this.tsbDeleteResume.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDeleteResume.Name = "tsbDeleteResume";
             this.tsbDeleteResume.Size = new System.Drawing.Size(23, 22);
-            this.tsbDeleteResume.Text = "toolStripButton2";
+            this.tsbDeleteResume.Text = "删除简历";
+            this.tsbDeleteResume.Click += new System.EventHandler(this.tsbDeleteResume_Click);
             // 
             // tsbUpdateResume
             // 
@@ -148,7 +150,7 @@
             this.tsbUpdateResume.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUpdateResume.Name = "tsbUpdateResume";
             this.tsbUpdateResume.Size = new System.Drawing.Size(23, 22);
-            this.tsbUpdateResume.Text = "toolStripButton3";
+            this.tsbUpdateResume.Text = "修改简历";
             this.tsbUpdateResume.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
@@ -158,7 +160,8 @@
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Text = "查找简历";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator1
             // 
@@ -172,7 +175,7 @@
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.toolStripButton5.Text = "帮助";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // statusStrip1
@@ -188,7 +191,7 @@
             // timeshower
             // 
             this.timeshower.Name = "timeshower";
-            this.timeshower.Size = new System.Drawing.Size(754, 17);
+            this.timeshower.Size = new System.Drawing.Size(785, 17);
             this.timeshower.Spring = true;
             this.timeshower.Text = "timeshow";
             this.timeshower.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

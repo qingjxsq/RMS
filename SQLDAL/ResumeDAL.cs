@@ -21,16 +21,16 @@ namespace SQLDAL
         {
             //生成SQl命令
             StringBuilder strSQL = new StringBuilder();
-            strSQL.Append("INSERT INTO [dbo.tb_Resume](ID,Name,Gender,PoliticaStatus," +
+            strSQL.Append("INSERT INTO [tb_Resume](ID,Name,Gender,PoliticaStatus," +
                             "Birthday,School,Major,Speciality,Photoes)");
-            strSQL.Append("VALUSE(@ID,@Name,@Gender,@PoliticaStatus," +
+            strSQL.Append(" VALUES(@ID,@Name,@Gender,@PoliticaStatus," +
                             "@Birthday,@School,@Major,@Speciality,@Photoes)");
             //生成参数数组
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@ID",resume.ID),
                 new SqlParameter("@Name",resume.Name),
                 new SqlParameter("@Gender",resume.Gender),
-                new SqlParameter("@Politicalstatus",resume.PoliSta),
+                new SqlParameter("@PoliticaStatus",resume.PoliSta),
                 new SqlParameter("@Birthday",resume.Birthday),
                 new SqlParameter("@School",resume.School),
                 new SqlParameter("@Major",resume.Major),
@@ -47,7 +47,7 @@ namespace SQLDAL
         ///<returns></returns>
         public int DeleteResume(string id)
         {
-            string strSQL = string.Format("DELETE FROM [dbo.tb_Resume] WHERE ID=@ID");
+            string strSQL = string.Format("DELETE FROM [tb_Resume] WHERE ID=@ID");
             SqlParameter[] parameter = new SqlParameter[] { new SqlParameter("@ID",id) };
             return Helper.ExecuteNonQuery(strSQL.ToString(),CommandType.Text,parameter);
         }
@@ -60,23 +60,23 @@ namespace SQLDAL
         {
             //构造SQL语句
             StringBuilder strSQL= new StringBuilder();
-            strSQL.Append("UPDATE [dbo.tb_Resume] SET  ");
+            strSQL.Append("UPDATE [tb_Resume] SET  ");
             strSQL.Append("" +
                 "Name=@Name," +
                 "Gender=@Gender," +
-                "Politicalstaus=@Politicalstaus," +
+                "PoliticaStatus=@PoliticaStatus," +
                 "Birthday=@Birthday,"+
                 "School=@School," +
-                "Major=@Major" +
-                "Speciality=@Speciality" +
-                "Photoes=@Photoes" +
+                "Major=@Major," +
+                "Speciality=@Speciality," +
+                "Photoes=@Photoes " +
                 "WHERE ID=@ID");
             //参数数组
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@ID",resume.ID),
                 new SqlParameter("@Name",resume.Name),
                 new SqlParameter("@Gender",resume.Gender),
-                new SqlParameter("@Politicalstatus",resume.PoliSta),
+                new SqlParameter("@PoliticaStatus",resume.PoliSta),
                 new SqlParameter("@Birthday",resume.Birthday),
                 new SqlParameter("@School",resume.School),
                 new SqlParameter("@Major",resume.Major),
@@ -95,7 +95,7 @@ namespace SQLDAL
         {
             Model.Resume resume = new Model.Resume();
             //构造SQL语句
-            string strSQL = "SELECT * FROM [dbo.tb_Resume] WHERE ID=@ID";
+            string strSQL = "SELECT * FROM [tb_Resume] WHERE ID=@ID";
             SqlParameter[] para = new SqlParameter[] { new SqlParameter("@ID", id) };
             //返回结果集
             using (SqlDataReader dr = Helper.ExecuteReader(strSQL, CommandType.Text, para))
@@ -107,7 +107,7 @@ namespace SQLDAL
                     resume.ID = dr["ID"].ToString().Trim();
                     resume.Name = dr["Name"].ToString().Trim();
                     resume.Gender = dr["Gender"].ToString().Trim();
-                    resume.PoliSta = dr["Politicalstatus"].ToString().Trim();
+                    resume.PoliSta = dr["PoliticaStatus"].ToString().Trim();
                     resume.Birthday = dr["Birthday"].ToString().Trim();
                     resume.School = dr["School"].ToString().Trim();
                     resume.Major = dr["Major"].ToString().Trim();
@@ -128,10 +128,10 @@ namespace SQLDAL
             //生成SQL命令
             StringBuilder strSQL = new StringBuilder();
             strSQL.Append("SELECT ID,Name,Gender,PoliticaStatus," +
-                            "Birthday,School,Major,Speciality,Photoes from[dbo.tb_Resume]");
-            if(strWhere != null)
+                            "Birthday,School,Major,Speciality,Photoes from [tb_Resume]");
+            if(strWhere != "")
             {
-                strSQL.Append(" and " + strWhere);
+                strSQL.Append("  WHERE  " + strWhere);
             }
             return Helper.ExecuteDataTable(strSQL.ToString());
         }

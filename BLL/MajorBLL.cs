@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLDAL;
+
 namespace BLL
 {
     public class MajorBLL
     {
-        MajorBLL major=new MajorBLL();
+        Major major=new Major();
 
         /// <summary>
         /// 加载学校
@@ -16,7 +17,7 @@ namespace BLL
         /// <returns></returns>
         public List<string> GetSchool()
         {
-            return major.GetSchool();
+            return major.GetSchoolName();
         }
 
         /// <summary>
