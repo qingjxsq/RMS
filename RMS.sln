@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDAL", "SQLDAL\SQLDAL.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "From", "From\From.csproj", "{CF8D24A4-B37D-46AA-B71F-65ABC3313247}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{86CC116B-CAB1-4908-9C8E-B587D2195E87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{CF8D24A4-B37D-46AA-B71F-65ABC3313247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF8D24A4-B37D-46AA-B71F-65ABC3313247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF8D24A4-B37D-46AA-B71F-65ABC3313247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CC116B-CAB1-4908-9C8E-B587D2195E87}.Debug|Any CPU.ActiveCfg = Debug
+		{86CC116B-CAB1-4908-9C8E-B587D2195E87}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

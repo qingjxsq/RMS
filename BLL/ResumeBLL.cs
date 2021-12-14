@@ -12,7 +12,7 @@ namespace BLL
         //创建简历数据访问对象
         ResumeDAL dalResume=new ResumeDAL();
         ///<summary>
-        ///添加学生
+        ///添加简历
         /// </summary>
         /// <param name="resume"></param>
         ///<return></return>
